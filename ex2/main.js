@@ -4,10 +4,10 @@ var c = 3
 
 switch(a) {
     case 1:
-        console.log("b = 4")
+        console.log("égal à b")
         break
     case c :
-        console.log("c = 3")
+        console.log("égal à c")
         break
     default :
         console.log("égal à rien")
