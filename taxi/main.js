@@ -1,14 +1,3 @@
-function getRandomItem(arr) {
-
-    // get random index value
-    const randomIndex = Math.floor(Math.random() * arr.length);
-
-    // get random item
-    const item = arr[randomIndex];
-
-    return item;
-}
-
 class Character{
     constructor(name,sanity){
         this.name = name
@@ -20,15 +9,17 @@ class Character{
         let redLightsNumbers = 0
         while (redLightsNumbers < 30 && this.sanity > 0){
             redLightsNumbers++
-            console.log(redLightsNumbers)
-            let result = getRandomItem(playlist)
-            if (result === "Wejdene - Anissa") {
+            console.log("Le taxi s'arrête devant le " + redLightsNumbers + "e feu rouge et la musique de la radio change.")
+            let result = Math.floor(Math.random() * Musics.length)
+            if (Musics[result] === "Wejdene - Anissa") {
                 this.sanity -= 1
                 numberChangTaxi = numberChangTaxi + 1
+                console.log("Anissa de Wejdene passe à la radio, " + this.name + " perd un point de vie et descend.")
+                console.log(this.name + " a changé de taxi, c" + "'" + "est la " + numberChangTaxi + "e fois depuis le début du trajet." + " Il lui reste " + this.sanity + " de points de vie.")
                 console.log(numberChangTaxi)
             }
             if (this.sanity === 0) {
-                console.log(this.name + " a explosé.")
+                console.log(this.name + " a explosé, Anissa de Wejdene est passé trop de fois à la radio.")
                 break
             }
             if (redLightsNumbers === 30) {
